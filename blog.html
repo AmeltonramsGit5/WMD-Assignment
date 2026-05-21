@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog – DevLog AK</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="page-wrapper">
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-inner">
+      <span class="logo">DEVLOG AK</span>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="content">
+
+      <h2 class="section-title">Blog</h2>
+
+      <!-- FILTER BUTTONS -->
+      <div class="category-filters">
+        <button class="category-btn active" data-category="all">ALL</button>
+        <button class="category-btn" data-category="java">JAVA</button>
+        <button class="category-btn" data-category="web">WEB DEVELOPMENT</button>
+        <button class="category-btn" data-category="csim">CSIM</button>
+        <button class="category-btn" data-category="notes">UNIVERSITY NOTES</button>
+      </div>
+
+      <!-- BLOG CARDS -->
+      <div class="cards-grid">
+
+        <div class="card" data-category="java">
+          <span class="tag">JAVA</span>
+          <h5>Understanding Arrays in Java</h5>
+          <p>Learn the basics of arrays in Java with clear examples and step-by-step explanations.</p>
+          <a href="#" class="read-more">READ MORE</a>
+        </div>
+
+        <div class="card" data-category="web">
+          <span class="tag">WEB DEVELOPMENT</span>
+          <h5>What is HTML?</h5>
+          <p>Introduction to HTML structure and how browsers use it to render web pages.</p>
+          <a href="#" class="read-more">READ MORE</a>
+        </div>
+
+        <div class="card" data-category="csim">
+          <span class="tag">CSIM</span>
+          <h5>Disassembling a Computer</h5>
+          <p>A step-by-step walkthrough of safe computer hardware breakdown and component identification.</p>
+          <a href="#" class="read-more">READ MORE</a>
+        </div>
+
+        <div class="card" data-category="java">
+          <span class="tag">JAVA</span>
+          <h5>Variables in Java</h5>
+          <p>Understanding data types and how to declare and use variables in Java programs.</p>
+          <a href="#" class="read-more">READ MORE</a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 DEVLOG AK · ALL RIGHTS RESERVED</span>
+      <div class="footer-links">
+        <a href="https://github.com/AmeltonramsGit5" target="_blank">GitHub</a>
+        <a href="mailto:ameltonkenalesamang5@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Filter buttons → show/hide cards by category
+  const buttons = document.querySelectorAll('.category-btn');
+  const cards   = document.querySelectorAll('.cards-grid .card');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // update active button
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const selected = btn.dataset.category;
+
+      cards.forEach(card => {
+        if (selected === 'all' || card.dataset.category === selected) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
