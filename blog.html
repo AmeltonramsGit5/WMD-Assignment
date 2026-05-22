@@ -32,42 +32,57 @@
 
       <!-- FILTER BUTTONS -->
       <div class="category-filters">
-        <button class="category-btn active" data-category="all">ALL</button>
-        <button class="category-btn" data-category="java">JAVA</button>
-        <button class="category-btn" data-category="web">WEB DEVELOPMENT</button>
-        <button class="category-btn" data-category="csim">CSIM</button>
-        <button class="category-btn" data-category="notes">UNIVERSITY NOTES</button>
+        <button class="category-btn active" data-filter="all">ALL</button>
+        <button class="category-btn" data-filter="java">JAVA</button>
+        <button class="category-btn" data-filter="web">WEB DEVELOPMENT</button>
+        <button class="category-btn" data-filter="csim">CSIM</button>
       </div>
 
       <!-- BLOG CARDS -->
       <div class="cards-grid">
 
-        <div class="card" data-category="java">
-          <span class="tag">JAVA</span>
-          <h5>Understanding Arrays in Java</h5>
-          <p>Learn the basics of arrays in Java with clear examples and step-by-step explanations.</p>
-          <a href="#" class="read-more">READ MORE</a>
-        </div>
-
         <div class="card" data-category="web">
           <span class="tag">WEB DEVELOPMENT</span>
           <h5>What is HTML?</h5>
           <p>Introduction to HTML structure and how browsers use it to render web pages.</p>
-          <a href="#" class="read-more">READ MORE</a>
+          <div class="extra-content">
+            <p>
+              HTML is the standard language for creating web pages.
+              It uses tags to structure content such as headings, paragraphs, links and images.
+            </p>
+          </div>
         </div>
 
         <div class="card" data-category="csim">
           <span class="tag">CSIM</span>
           <h5>Disassembling a Computer</h5>
-          <p>A step-by-step walkthrough of safe computer hardware breakdown and component identification.</p>
-          <a href="#" class="read-more">READ MORE</a>
+          <p>A step by step walkthrough of safe computer hardware breakdown and component identification.</p>
+          <div class="extra-content">
+            <p>
+              Power off and unplug first.
+              Use anti static wrist strap.
+              Remove case screws and open case.
+            </p>
+          </div>
         </div>
 
         <div class="card" data-category="java">
           <span class="tag">JAVA</span>
-          <h5>Variables in Java</h5>
-          <p>Understanding data types and how to declare and use variables in Java programs.</p>
-          <a href="#" class="read-more">READ MORE</a>
+          <h5>Understanding arrays in Java</h5>
+          <p>Learn the basics of arrays in Java with clear examples.</p>
+          <div class="extra-content">
+            <p>
+              Arrays store multiple values in one variable. 
+              They help when working with lists like names, marks or prices.
+
+              Examples:
+              Student marks
+              int[] marks = {75, 82, 90, 68};
+
+              Product prices
+              double[] prices = {19.99, 5.50, 120.00, 8.75};
+            </p>
+          </div>
         </div>
 
       </div>
@@ -87,30 +102,31 @@
   </footer>
 
 </div>
-
+<!-- INLINE JAVASCRIPT -->
 <script>
-  // Filter buttons → show/hide cards by category
   const buttons = document.querySelectorAll('.category-btn');
-  const cards   = document.querySelectorAll('.cards-grid .card');
+  const cards = document.querySelectorAll('.card');
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // update active button
+
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const selected = btn.dataset.category;
+      const filter = btn.dataset.filter;
 
       cards.forEach(card => {
-        if (selected === 'all' || card.dataset.category === selected) {
+        const category = card.dataset.category;
+
+        if (filter === 'all' || filter === category) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
       });
+
     });
   });
 </script>
-
 </body>
 </html>

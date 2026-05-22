@@ -454,4 +454,34 @@ footer {
   footer {
     padding: 24px 20px;
   }
+
+  .blog-card {
+    transition: 0.4s ease;
+    overflow: hidden;
+}
+
+.extra-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.blog-card.active .extra-content {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.read-more {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 700;
+    color: #0057ff;
+    text-decoration: none;
+}
+.card .read-more:hover {
+text-decoration: underline;
+}
 }
