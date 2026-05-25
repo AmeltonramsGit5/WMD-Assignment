@@ -125,28 +125,28 @@ nav a.active::after {
   margin-bottom: 40px;
 }
 
-/* ── HERO ── */
-.hero {
+/* ── Banner ── */
+.Banner {
   padding: 90px 40px 80px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.hero h1 {
-  font-size: 3rem;
+.Banner h1 {
+  font-size: 2.5rem;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.00;
   margin-bottom: 10px;
 }
 
-.hero .author {
+.Banner .author {
   color: var(--accent);
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 16px;
 }
 
-.hero p {
+.Banner p {
   color: var(--muted);
   font-size: 1rem;
   max-width: 500px;
@@ -173,7 +173,7 @@ nav a.active::after {
 /* ── SECTION STRIP ── */
 .section-strip {
   background: var(--light-bg);
-  padding: 60px 40px;
+  padding: 40px 20px;
 }
 
 .section-strip-inner {
@@ -294,10 +294,10 @@ nav a.active::after {
   display: flex;
   align-items: center;
   gap: 36px;
-  margin-bottom: 48px;
+  margin-bottom: 9px;
   padding: 36px;
   background: var(--light-bg);
-  border-radius: 14px;
+  border-radius: 10px;
 }
 
 .avatar-circle {
@@ -352,9 +352,11 @@ input,
 textarea {
   width: 100%;
   padding: 12px 14px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid #e0e4ec;
   border-radius: 8px;
   font-family: inherit;
+  resize: none;
+  height: 50px;
 }
 
 input:focus,
@@ -422,11 +424,11 @@ footer {
     font-size: 13px;
   }
 
-  .hero {
+  .Banner {
     padding: 50px 20px;
   }
 
-  .hero h1 {
+  .Banner h1 {
     font-size: 2rem;
   }
 
